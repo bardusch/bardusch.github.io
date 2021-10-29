@@ -1,0 +1,11 @@
+/*!
+ * easyEWS JavaScript Library v1.0.20
+ * http://theofficecontext.com
+ *
+ * Copyright David E. Craig and other contributors
+ * Portions Copyright (c) 2020 Vijay Samtani
+ * Released under the MIT license
+ * https://tldrlegal.com/license/mit-license
+ *
+ * Date: 2020-08-27T15:44EST
+ */
