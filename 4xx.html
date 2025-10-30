@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>400 Bad Request</title>
+    <style>
+        /* Global reset and body styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 50px;
+            color: #333;
+            margin: 0;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Cloudflare error details block styles */
+      .cf-error-details {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        margin-top: 20px;
+        text-align: left;
+        color: #333;
+      }
+
+      .cf-error-details h1 {
+        font-size: 28px;
+        color: #e53e3e;
+        margin-bottom: 15px;
+      }
+
+      .cf-error-details p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .cf-error-details ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .cf-error-details li {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 5px;
+      }
+
+      /* Highlight important info like Ray ID and IP address */
+      .cf-error-details li span {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .cf-error-details .error-info {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-left: 5px solid #e53e3e;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .cf-error-details .error-info p {
+        margin: 5px 0;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235 79.002">
+        <path fill="#0A2171" d="M21.131 1.395 0 77.606h12.051L33.184 1.395zM119.125 1.395 97.993 77.606h12.052l21.131-76.211zM229.008 1.519h-11.795l-20.967 75.609-.098.355h11.786l20.974-75.609zM37.32 23.751a8.861 8.861 0 0 0-7.101-3.517h-.307L14.003 77.606h.531c3.34 0 6.512-1.068 9.17-3.088a15.015 15.015 0 0 0 5.428-8.012l9.695-34.956a8.882 8.882 0 0 0-1.507-7.799zM65.325 23.758a8.871 8.871 0 0 0-7.11-3.523h-.307L41.999 77.606h12.052L66.834 31.55a8.872 8.872 0 0 0-1.509-7.792zM71.588 21.388 55.992 77.606h12.053l15.584-56.218zM127.58 21.388 115.133 66.29c-.753 2.711-.208 5.551 1.495 7.791s4.294 3.525 7.113 3.525h.307l15.596-56.219H127.58zM141.576 21.392l-15.582 56.211h12.043l15.582-56.211zM195.83 20.317h-.424a14.953 14.953 0 0 0-9.121 3.072 14.935 14.935 0 0 0-5.398 7.968l-9.695 34.955a8.787 8.787 0 0 0 1.48 7.719 8.782 8.782 0 0 0 7.051 3.496h.246l15.748-56.801.113-.409zM111.417 20.235c-3.34 0-6.511 1.069-9.17 3.09a15.01 15.01 0 0 0-5.428 8.01L87.126 66.29a8.857 8.857 0 0 0 1.494 7.791 8.868 8.868 0 0 0 7.114 3.525h.307l15.908-57.372h-.532zM50.938 38.311l5.019-18.076h-.531a15.036 15.036 0 0 0-9.171 3.09 15.013 15.013 0 0 0-5.427 8.01l-1.942 6.976h12.052zM149.41 43.753a8.825 8.825 0 0 0 1.488 7.76 8.837 8.837 0 0 0 7.088 3.514h.279l9.643-34.757h-.486c-3.332 0-6.496 1.066-9.15 3.083s-4.527 4.781-5.414 7.993l-3.448 12.407zM94.496 32.694a8.856 8.856 0 0 0-1.494-7.79 8.867 8.867 0 0 0-7.114-3.527h-.307l-4.695 16.934h12.052l1.558-5.617zM49.242 42.532c-3.34 0-6.511 1.068-9.17 3.09a14.998 14.998 0 0 0-5.427 8.012L31.132 66.28a8.853 8.853 0 0 0 1.495 7.789 8.87 8.87 0 0 0 7.114 3.527h.307l9.726-35.064h-.532zM171.082 46.081a8.815 8.815 0 0 0-7.064-3.502h-.273l-9.699 34.971h.471c3.33 0 6.49-1.064 9.141-3.08a15.01 15.01 0 0 0 5.414-7.986l3.512-12.646a8.843 8.843 0 0 0-1.502-7.757zM144.715 60.577l-1.586 5.717a8.842 8.842 0 0 0 1.492 7.779 8.848 8.848 0 0 0 7.104 3.521h.299l4.721-17.018h-12.03zM176.883 38.254l1.871-6.717a8.797 8.797 0 0 0-1.486-7.74 8.802 8.802 0 0 0-7.068-3.504h-.264l-4.986 17.962h11.933zM204.85 38.212l1.85-6.688a8.76 8.76 0 0 0-1.477-7.704 8.773 8.773 0 0 0-7.037-3.487h-.232l-4.963 17.878h11.859zM198.648 60.651h-11.875l-4.68 16.871h.42c3.32 0 6.475-1.064 9.119-3.072a14.927 14.927 0 0 0 5.395-7.967l1.621-5.832zM233.201 23.84a8.735 8.735 0 0 0-7.008-3.474h-.207L210.248 77.13l-.096.346h11.777l12.744-45.959a8.724 8.724 0 0 0-1.472-7.677z"></path>
+      </svg>
+
+      <h1>400 Bad Request</h1>
+
+      <p>Sorry, there was an issue with your request.</p>
+      <p>If you need immediate assistance, please contact support.</p>
+      <p>::CLOUDFLARE_ERROR_500S_BOX::</p>
+    </div>
+  </body>
+</html>
